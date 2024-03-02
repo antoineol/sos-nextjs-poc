@@ -1,7 +1,7 @@
 'use client';
 
 import type { FC, PropsWithChildren } from 'react';
-import { useRefetchProducts } from './product-utils';
+import { useRefetchProducts } from '../product-hooks';
 
 type SearchFormProps = PropsWithChildren;
 

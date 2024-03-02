@@ -5,7 +5,7 @@ const headersWithAuth = {
   Authorization: `Basic ${btoa(env.PRESTASHOP_KEY)}`,
 };
 
-export async function fetchPrestashop<T>(path: string) {
+export async function fetchBlueway<T>(path: string) {
   if (!path.startsWith('/')) path = `/${path}`;
   const url = `${env.PRESTASHOP_API_URL}${path}`;
   const res = await fetch(url, { headers: headersWithAuth });

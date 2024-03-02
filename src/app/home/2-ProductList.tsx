@@ -1,11 +1,11 @@
 'use client';
 
+import { type SfProduct } from '@vue-storefront/unified-data-model';
 import { type FC } from 'react';
-import { type Product } from '../../server/prestashop/prestashop-types';
-import { useProducts } from './product-utils';
+import { useProducts } from './product-hooks';
 
 interface ProductListProps {
-  initialProducts: Product[];
+  initialProducts: SfProduct[];
 }
 
 export const ProductList: FC<ProductListProps> = function ProductList(props) {

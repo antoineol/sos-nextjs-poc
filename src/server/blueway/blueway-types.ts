@@ -1,4 +1,4 @@
-export interface PSProduct {
+export interface BWProduct {
   id: number;
   id_manufacturer: number;
   id_supplier: number;
@@ -50,3 +50,5 @@ export interface PSProduct {
     stock_availables: unknown[][];
   };
 }
+
+export type ProductShort = Pick<BWProduct, 'id'>;

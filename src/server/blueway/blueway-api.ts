@@ -1,37 +1,37 @@
 'use server';
 
-import { prestashopToSfProducts } from './prestashop-converter';
-import { type PSProduct } from './prestashop-types';
-import { fetchPrestashop } from './prestashop-utils';
+import { bluewayToSfProducts } from './blueway-converter';
+import { type BWProduct } from './blueway-types';
+import { fetchBlueway } from './blueway-utils';
 
 interface ProductsResp {
-  products: PSProduct[];
+  products: BWProduct[];
 }
 
 // Available parameters: https://devdocs.prestashop-project.org/8/webservice/tutorials/advanced-use/additional-list-parameters/
-export async function psFetchProducts() {
-  const productsResp = await fetchPrestashop<ProductsResp>(
+export async function bwFetchProducts() {
+  const productsResp = await fetchBlueway<ProductsResp>(
     '/products?display=full',
   );
   const res = productsResp.products ?? [];
-  return prestashopToSfProducts(res);
+  return bluewayToSfProducts(res);
 }
 
 interface SearchResp {
-  products: PSProduct[];
+  products: BWProduct[];
   categories: unknown[];
 }
 
-export async function psSearchProducts(search?: string) {
+export async function bwSearchProducts(search?: string) {
   if (!search) {
-    return psFetchProducts();
+    return bwFetchProducts();
   }
 
-  const productsResp = await fetchPrestashop<SearchResp>(
+  const productsResp = await fetchBlueway<SearchResp>(
     `/search?language=1&display=full&query=${encodeURIComponent(search)}`,
   );
   const res = productsResp.products ?? [];
-  return prestashopToSfProducts(res);
+  return bluewayToSfProducts(res);
 }
 
 // interface ProductResp {

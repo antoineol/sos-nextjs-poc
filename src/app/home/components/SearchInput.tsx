@@ -1,8 +1,8 @@
 'use client';
 
 import { useRef, type FC } from 'react';
-import { submit } from '../utils/common-utils';
-import { useSubmitDebounced } from '../utils/hooks/useSubmitDebounced';
+import { submit } from '../../utils/common-utils';
+import { useSubmitDebounced } from '../../utils/hooks/useSubmitDebounced';
 
 interface SearchInputProps {
   defaultQuery: string;

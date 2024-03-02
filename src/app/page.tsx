@@ -1,6 +1,6 @@
 import { Suspense } from 'react';
 import { LoaderBlock } from './_components/Loader';
-import { Products } from './home/Products';
+import { Products } from './home/1-Products';
 import { type Page } from './utils/common-types';
 
 export const Home: Page = async props => {

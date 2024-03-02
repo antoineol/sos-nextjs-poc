@@ -1,12 +1,9 @@
 import type { FC } from 'react';
 import { SubmitButton } from '../_components/SubmitButton';
-import {
-  fetchProducts,
-  searchProducts,
-} from '../../server/prestashop/prestashop-api';
-import { ProductList } from './ProductList';
-import { SearchForm } from './SearchForm';
-import { SearchInput } from './SearchInput';
+import { ProductList } from './2-ProductList';
+import { SearchForm } from './components/SearchForm';
+import { SearchInput } from './components/SearchInput';
+import { searchProducts } from './product-utils';
 
 interface ProductsProps {
   defaultQuery: string;
@@ -15,13 +12,11 @@ interface ProductsProps {
 export const Products: FC<ProductsProps> = async function Products(props) {
   const { defaultQuery } = props;
 
-  const products = await (defaultQuery
-    ? searchProducts(defaultQuery)
-    : fetchProducts());
+  const products = await searchProducts(defaultQuery);
 
   return (
     <div className="flex flex-col gap-1">
-      <h3 className="mb-2 text-xl font-bold">PrestaShop Products</h3>
+      <h3 className="mb-2 text-xl font-bold">SOS Products</h3>
 
       <SearchForm>
         <SearchInput defaultQuery={defaultQuery} />

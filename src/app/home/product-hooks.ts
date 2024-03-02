@@ -1,25 +1,22 @@
 'use client';
 
 import { useQuery, useQueryClient } from '@tanstack/react-query';
+import { type SfProduct } from '@vue-storefront/unified-data-model';
 import { useCallback } from 'react';
-import { searchProducts } from '../../server/prestashop/prestashop-api';
-import { type Product } from '../../server/prestashop/prestashop-types';
 import { getSearchParam, handleError } from '../utils/common-utils';
+import { searchProducts } from './product-utils';
 
-export function useProducts(initialData?: Product[]) {
+export function useProducts(initialData?: SfProduct[]) {
   const { data: products } = useQuery({
     queryKey: ['products'],
-    queryFn: () => searchProducts(getSearchParam('q')),
+    queryFn: () => searchProducts(getSearchParam('q') ?? ''),
     initialData,
     gcTime: 0, // Temporary - to avoid a weird SSR cache in the PoC
   });
 
-  // const { mutate } = useMutation({
-  //   mutationFn: () => updateProduct(),
-  //   onSuccess: () => refetch(),
-  // });
+  // We could also add a mutator here.
 
-  return { products /* , mutate */ };
+  return { products };
 }
 
 export function useRefetchProducts() {
