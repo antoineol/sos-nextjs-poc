@@ -35,6 +35,7 @@ export const SearchInput: FC<SearchInputProps> = function SearchInput(props) {
           submit(e);
         }
       }}
+      autoFocus
       className="border-1 flex-1 rounded border border-slate-500 bg-transparent px-2 py-2"
     />
   );

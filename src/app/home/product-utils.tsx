@@ -11,7 +11,7 @@ export function useProducts(initialData?: Product[]) {
     queryKey: ['products'],
     queryFn: () => searchProducts(getSearchParam('q')),
     initialData,
-    cacheTime: 0, // Temporary - to avoid a weird SSR cache in the PoC
+    gcTime: 0, // Temporary - to avoid a weird SSR cache in the PoC
   });
 
   // const { mutate } = useMutation({
