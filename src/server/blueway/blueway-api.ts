@@ -1,5 +1,4 @@
-'use server';
-
+import 'server-only';
 import { bluewayToSfProducts } from './blueway-converter';
 import { type BWProduct } from './blueway-types';
 import { fetchBlueway } from './blueway-utils';
