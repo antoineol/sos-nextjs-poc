@@ -1,10 +1,11 @@
 import 'server-only';
+import { type SDKSource } from '../sdk';
 import { prestashopToSfProducts } from './prestashop-converter';
 import { type PSProduct } from './prestashop-types';
 import { fetchPrestashop } from './prestashop-utils';
 
 /** Optional wrapper */
-export const prestashop = {
+export const prestashop: SDKSource = {
   fetchProducts: psFetchProducts,
   searchProducts: psSearchProducts,
 };

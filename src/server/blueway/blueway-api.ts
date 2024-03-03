@@ -1,10 +1,11 @@
 import 'server-only';
+import { type SDKSource } from '../sdk';
 import { bluewayToSfProducts } from './blueway-converter';
 import { type BWProduct } from './blueway-types';
 import { fetchBlueway } from './blueway-utils';
 
 /** Optional wrapper */
-export const blueway = {
+export const blueway: SDKSource = {
   fetchProducts: bwFetchProducts,
   searchProducts: bwSearchProducts,
 };
