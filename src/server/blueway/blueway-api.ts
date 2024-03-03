@@ -4,6 +4,12 @@ import { bluewayToSfProducts } from './blueway-converter';
 import { type BWProduct } from './blueway-types';
 import { fetchBlueway } from './blueway-utils';
 
+/** Optional wrapper */
+export const blueway = {
+  fetchProducts: bwFetchProducts,
+  searchProducts: bwSearchProducts,
+};
+
 interface ProductsResp {
   products: BWProduct[];
 }

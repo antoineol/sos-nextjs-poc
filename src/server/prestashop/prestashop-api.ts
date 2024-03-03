@@ -1,8 +1,13 @@
-'use server';
-
+import 'server-only';
 import { prestashopToSfProducts } from './prestashop-converter';
 import { type PSProduct } from './prestashop-types';
 import { fetchPrestashop } from './prestashop-utils';
+
+/** Optional wrapper */
+export const prestashop = {
+  fetchProducts: psFetchProducts,
+  searchProducts: psSearchProducts,
+};
 
 interface ProductsResp {
   products: PSProduct[];

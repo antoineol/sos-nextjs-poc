@@ -4,7 +4,7 @@ import { useQuery, useQueryClient } from '@tanstack/react-query';
 import { type SfProduct } from '@vue-storefront/unified-data-model';
 import { useCallback } from 'react';
 import { getSearchParam, handleError } from '../utils/common-utils';
-import { searchProducts } from './product-utils';
+import { searchProducts } from './product-actions';
 
 export function useProducts(initialData?: SfProduct[]) {
   const { data: products } = useQuery({

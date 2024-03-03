@@ -1,5 +1,7 @@
 ## Getting started
 
+First installation
+
 - Install docker desktop
 - Install bun: https://bun.sh/ - `curl -fsSL https://bun.sh/install | bash`
 - `bun install`
@@ -10,6 +12,11 @@
 - On the same page: Add new webservice key > Generate > Check all permissions > Save
 - Copy the generated API key in .env, in `PRESTASHOP_KEY`
 - `bun dev` - starts the web app on http://localhost:3000
+
+Later, to start the app:
+
+- `bun dup` (Docker)
+- `bun dev`
 
 ## Switch between data sources
 

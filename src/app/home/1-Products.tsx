@@ -3,7 +3,7 @@ import { SubmitButton } from '../_components/SubmitButton';
 import { ProductList } from './2-ProductList';
 import { SearchForm } from './components/SearchForm';
 import { SearchInput } from './components/SearchInput';
-import { searchProducts } from './product-utils';
+import { searchProducts } from './product-actions';
 
 interface ProductsProps {
   defaultQuery: string;
