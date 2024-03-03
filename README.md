@@ -20,7 +20,7 @@ Later, to start the app:
 
 ## Switch between data sources
 
-See src/app/home/product-utils.ts
+See src/app/home/product-actions.ts
 
 ## Create T3 App
 

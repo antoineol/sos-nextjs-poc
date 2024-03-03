@@ -21,7 +21,7 @@ export function submit(e: MySubmitEvent) {
   e.target.form?.requestSubmit();
 }
 
-export function getSearchParam(name: string) {
+export function getURLSearchParam(name: string) {
   const url = new URL(window.location.href);
   return url.searchParams.get(name);
 }
