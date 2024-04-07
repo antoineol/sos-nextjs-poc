@@ -22,11 +22,12 @@ export const env = createEnv({
    * isn't built with invalid env vars.
    */
   server: {
-    PRESTASHOP_KEY: z.string(),
-    PRESTASHOP_API_URL: z.string(),
     NODE_ENV: z
       .enum(['development', 'test', 'production'])
       .default('development'),
+    PRESTASHOP_KEY: z.string(),
+    PRESTASHOP_API_URL: z.string(),
+    STRAPI_API_KEY: z.string(),
   },
 
   /**
@@ -43,9 +44,10 @@ export const env = createEnv({
    * middlewares) or client-side so we need to destruct manually.
    */
   runtimeEnv: {
+    NODE_ENV: process.env.NODE_ENV,
     PRESTASHOP_KEY: process.env.PRESTASHOP_KEY,
     PRESTASHOP_API_URL: process.env.PRESTASHOP_API_URL,
-    NODE_ENV: process.env.NODE_ENV,
+    STRAPI_API_KEY: process.env.STRAPI_API_KEY,
   },
   /**
    * Run `build` or `dev` with `SKIP_ENV_VALIDATION` to skip env validation. This is especially

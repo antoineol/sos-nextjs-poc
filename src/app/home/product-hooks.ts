@@ -1,13 +1,12 @@
 'use client';
 
 import { useQuery, useQueryClient } from '@tanstack/react-query';
-import { type SfProduct } from '@vue-storefront/unified-data-model';
 import { useCallback } from 'react';
-import { getURLSearchParam, handleError } from '../utils/common-utils';
-import { searchProducts } from './product-actions';
+import { getURLSearchParam, handleError } from '../utils/app-utils';
+import { searchProducts, type SearchProductsResp } from './product-actions';
 
-export function useProducts(initialData?: SfProduct[]) {
-  const { data: products } = useQuery({
+export function useProducts(initialData?: SearchProductsResp) {
+  const { data: products /* , error */ } = useQuery({
     queryKey: ['products'],
     queryFn: () => searchProducts(getURLSearchParam('q') ?? ''),
     initialData,
