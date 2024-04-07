@@ -6,5 +6,5 @@ const headersWithAuth = {
 };
 
 export async function fetchStrapi<T>(path: string) {
-  return fetch2<T>(env.STRAPI_API_URL, path, headersWithAuth);
+  return fetch2<T>(`${env.STRAPI_BASE_URL}/api`, path, headersWithAuth);
 }
