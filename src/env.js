@@ -28,6 +28,7 @@ export const env = createEnv({
     PRESTASHOP_KEY: z.string(),
     PRESTASHOP_API_URL: z.string(),
     STRAPI_API_KEY: z.string(),
+    STRAPI_API_URL: z.string(),
   },
 
   /**
@@ -48,6 +49,7 @@ export const env = createEnv({
     PRESTASHOP_KEY: process.env.PRESTASHOP_KEY,
     PRESTASHOP_API_URL: process.env.PRESTASHOP_API_URL,
     STRAPI_API_KEY: process.env.STRAPI_API_KEY,
+    STRAPI_API_URL: process.env.STRAPI_API_URL,
   },
   /**
    * Run `build` or `dev` with `SKIP_ENV_VALIDATION` to skip env validation. This is especially

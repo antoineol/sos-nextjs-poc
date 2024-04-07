@@ -1,5 +1,5 @@
 import type { FC } from 'react';
-import { SubmitButton } from '../_components/SubmitButton';
+import { SubmitButton } from '../../_components/SubmitButton';
 import { ProductList } from './2-ProductList';
 import { SearchForm } from './components/SearchForm';
 import { SearchInput } from './components/SearchInput';
@@ -15,8 +15,8 @@ export const Products: FC<ProductsProps> = async function Products(props) {
   const products = await searchProducts(defaultQuery);
 
   return (
-    <div className="flex flex-col gap-1">
-      <h3 className="mb-2 text-xl font-bold">SOS Products</h3>
+    <>
+      <h3 className="mb-2 text-xl font-bold">SOS Products (prestashop)</h3>
 
       <SearchForm>
         <SearchInput defaultQuery={defaultQuery} />
@@ -24,6 +24,6 @@ export const Products: FC<ProductsProps> = async function Products(props) {
       </SearchForm>
 
       <ProductList initialProducts={products} />
-    </div>
+    </>
   );
 };

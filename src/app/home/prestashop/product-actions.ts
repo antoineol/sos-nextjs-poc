@@ -1,9 +1,9 @@
 'use server';
 
 import { z } from 'zod';
-import { action } from '../../common/safe-action';
-import { type ActionResp } from '../../common/typing';
-import { psSearchProducts } from '../../server/prestashop/prestashop-api';
+import { action } from '../../../common/safe-action';
+import { type ActionResp } from '../../../common/typing';
+import { psSearchProducts } from '../../../server/prestashop/prestashop-api';
 
 // This schema is used to validate input from client.
 const schema = z.string().max(50);

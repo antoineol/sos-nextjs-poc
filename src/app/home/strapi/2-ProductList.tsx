@@ -2,16 +2,18 @@
 
 import { useAutoAnimate } from '@formkit/auto-animate/react';
 import { type FC } from 'react';
-import { ErrorComp } from '../_components/ErrorComp';
-import { type SearchProductsResp } from './product-actions';
-import { useProducts } from './product-hooks';
+import { ErrorComp } from '../../_components/ErrorComp';
+import { type GetProductsResp } from './product-actions';
+import { useStrapiProducts } from './product-hooks';
 
 interface ProductListProps {
-  initialProducts: SearchProductsResp;
+  initialProducts: GetProductsResp;
 }
 
-export const ProductList: FC<ProductListProps> = function ProductList(props) {
-  const { products } = useProducts(props.initialProducts);
+export const StrapiProductList: FC<ProductListProps> = function ProductList(
+  props,
+) {
+  const { products } = useStrapiProducts(props.initialProducts);
 
   const [ref] = useAutoAnimate();
 
@@ -23,7 +25,7 @@ export const ProductList: FC<ProductListProps> = function ProductList(props) {
     <ul className="list-disc" ref={ref}>
       {products?.data?.map(p => (
         <li className="ml-4" key={p.id}>
-          {p.name}
+          {p.Name}
         </li>
       ))}
     </ul>

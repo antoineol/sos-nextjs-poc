@@ -2,12 +2,12 @@
 
 import { useQuery, useQueryClient } from '@tanstack/react-query';
 import { useCallback } from 'react';
-import { getURLSearchParam, handleError } from '../utils/app-utils';
+import { getURLSearchParam, handleError } from '../../utils/app-utils';
 import { searchProducts, type SearchProductsResp } from './product-actions';
 
 export function useProducts(initialData?: SearchProductsResp) {
   const { data: products /* , error */ } = useQuery({
-    queryKey: ['products'],
+    queryKey: ['ps-products'],
     queryFn: () => searchProducts(getURLSearchParam('q') ?? ''),
     initialData,
     gcTime: 0, // Temporary - to avoid a weird SSR cache in the PoC
