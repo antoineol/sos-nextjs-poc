@@ -8,7 +8,6 @@ export function useStrapiProducts(initialData?: GetProductsResp) {
     queryKey: ['strapi-products'],
     queryFn: () => getProducts(),
     initialData,
-    gcTime: 0, // Temporary - to avoid a weird SSR cache in the PoC
   });
 
   // We could also add a mutator here.

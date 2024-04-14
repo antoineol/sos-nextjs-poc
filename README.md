@@ -25,6 +25,7 @@ See src/app/home/product-actions.ts
 ## TODO
 
 Remove vitest and only use bun for tests.
+Migrate .eslintrc.cjs to the new eslint flat config format.
 
 ## Create T3 App
 

@@ -23,7 +23,7 @@ export const ErrorComp: FC<ErrorCompProps> = memo(function ErrorComp(props) {
       return 'Validation error'; // To refine with examples
     }
     if (resp.serverError) {
-      handleError(resp.serverError);
+      handleError('Validation error:', resp.serverError);
       return `Server error: ${resp.serverError}`;
     }
   }

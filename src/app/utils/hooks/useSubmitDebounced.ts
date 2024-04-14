@@ -1,6 +1,8 @@
+'use client';
+
 import { useEffect } from 'react';
 import { useDebouncedCallback } from 'use-debounce';
-import { submit } from '../app-utils';
+import { submit } from '../client-utils';
 
 export function useSubmitDebounced(delay = 1000) {
   const submitDebouned = useDebouncedCallback(submit, delay);
