@@ -26,6 +26,7 @@ First installation
   - Token type: Full access
   - Save
 - Copy the token displayed, paste in `nextjs-app/.env` > `STRAPI_API_KEY` key
+- Back to Strapi admin, add a Category and a Restaurant in the Content Manager: http://localhost:1337/admin/content-manager
 
 ### Finally
 
