@@ -27,6 +27,8 @@ See src/app/home/product-actions.ts
 Remove vitest and only use bun for tests.
 Migrate .eslintrc.cjs to the new eslint flat config format.
 
-## Create T3 App
+## Usage
+
+Instructions are in the top-level README.md file.
 
 This is a [T3 Stack](https://create.t3.gg/) project bootstrapped with `create-t3-app`, modified to have a minimalist template.

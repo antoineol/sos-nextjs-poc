@@ -6,12 +6,12 @@
     "db:push": "drizzle-kit push:pg",
     "db:studio": "drizzle-kit studio --host 0.0.0.0",
     "db:drop": "drizzle-kit drop",
-    "dev": "bun install && next dev --turbo -H 0.0.0.0",
+    "dev": "bun install && bun dup && next dev --turbo -H 0.0.0.0",
     "lint": "next lint --fix",
     "start": "next start",
     "t": "bun test --watch",
     "test": "vitest",
-    "dup": "docker compose up -d",
+    "dup": "cd .. && bun dup",
     "upgr": "bunx npm-check-updates -i"
   },
   "dependencies": {

@@ -1,4 +1,7 @@
-import { type PrestaShopErrorWrapper } from '../app/utils/app-types';
+import {
+  type PrestaShopErrorWrapper,
+  type StrapiErrorWrapper,
+} from '../app/utils/app-types';
 
 export async function fetch2<T>(
   baseUrl: string,
@@ -51,7 +54,9 @@ export class FetchError<T> extends Error {
     const message =
       typeof body === 'string'
         ? body
-        : (body as PrestaShopErrorWrapper)?.errors?.[0]?.message ?? '';
+        : (body as PrestaShopErrorWrapper)?.errors?.[0]?.message ??
+          (body as StrapiErrorWrapper).error.message ??
+          '';
     super(message);
     this.status = res.status;
     this.statusText = res.statusText;

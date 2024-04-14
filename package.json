@@ -1,0 +1,12 @@
+{
+  "name": "sos-nextjs-poc",
+  "version": "0.1.0",
+  "scripts": {
+    "postinstall": "cd nextjs-app && bun install && cd ../strapi && pnpm install",
+    "dev": "cd nextjs-app && bun run dev",
+    "dup": "docker compose up -d",
+    "dupb": "docker compose up -d --build"
+  },
+  "private": true,
+  "type": "module"
+}

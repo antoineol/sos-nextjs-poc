@@ -1,0 +1,21 @@
+.tmp/
+.cache/
+.env
+build/
+# Ignoring folders that might be used in starter templates
+backup/
+
+README.md
+*.example
+node_modules/
+.data/
+.editorconfig
+.eslintrc.json
+Dockerfile
+docker-compose.yml
+start.sh
+.husky/
+.git/
+.husky/
+.github/
+.vscode/
